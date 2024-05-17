@@ -52,23 +52,8 @@ namespace BackGroudJob_Demo2
 
                 var userInfoResponse = JsonConvert.DeserializeObject<UserInfoResponse>(usersResponseContent, settings);
 
-                List<Task<UserInfo>> usersStatus1 = new List<Task<UserInfo>>();
-                List<Task<UserInfo>> usersStatus0 = new List<Task<UserInfo>>();
-
-                foreach (UserInfo userInfo in userInfoResponse.UserInfos) 
-                {
-                    int userStatus = (int)userInfo.Status;
-                    if (userStatus == 0)
-                    {
-                        usersStatus0.Add(Task.Run(() => userInfo));
-                    }else if (userStatus == 1) 
-                    {
-                        usersStatus1.Add(Task.Run(() => userInfo));
-                    }
-                }
-
-                var serializedUsersStatus1 = await Task.WhenAll(usersStatus1);
-                var serializedUsersStatus0 = await Task.WhenAll(usersStatus0);
+                List<UserInfo> usersStatus1 = userInfoResponse.UserInfos.Where(x => x.Status == 1).ToList();
+                List<UserInfo> usersStatus0 = userInfoResponse.UserInfos.Where(x => x.Status == 0).ToList();
 
                 var firtFileName = "namefile";
                 var fileExtension = ".csv";
@@ -82,9 +67,9 @@ namespace BackGroudJob_Demo2
                 var time = DateTime.Now.ToString("yyyyMMddHHmmss");
                 var pathFile = getDirectory + firtFileName + "_" + time + fileExtension;
 
-                InsertUsersIntoDatabase(serializedUsersStatus1);
-                ExportFileCSV(serializedUsersStatus0, pathFile);
-              
+                await InsertUsersIntoDatabase(usersStatus1);
+                ExportFileCSV(usersStatus0, pathFile);
+
             }
             catch (HttpRequestException ex)
             {
@@ -100,7 +85,7 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async Task InsertUsersIntoDatabase(UserInfo[] userInfos)
+        public async Task InsertUsersIntoDatabase( List<UserInfo> userInfos)
         {
             List<User> users = new List<User>();
             foreach (UserInfo userInfo in userInfos)
@@ -126,7 +111,7 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async void ExportFileCSV(UserInfo[] userInfos , string pathFile)
+        public async void ExportFileCSV(List<UserInfo> userInfos , string pathFile)
         {
             try
             {
