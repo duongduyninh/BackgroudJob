@@ -68,7 +68,7 @@ namespace BackGroudJob_Demo2
                 var pathFile = getDirectory + firtFileName + "_" + time + fileExtension;
 
                 await InsertUsersIntoDatabase(usersStatus1);
-                ExportFileCSV(usersStatus0, pathFile);
+                await ExportFileCSV(usersStatus0, pathFile);
 
             }
             catch (HttpRequestException ex)
@@ -111,7 +111,7 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async void ExportFileCSV(List<UserInfo> userInfos , string pathFile)
+        public async Task ExportFileCSV(List<UserInfo> userInfos , string pathFile)
         {
             try
             {
