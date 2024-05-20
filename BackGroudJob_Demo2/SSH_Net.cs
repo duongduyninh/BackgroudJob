@@ -23,6 +23,7 @@ namespace BackGroudJob_Demo2
         {
             return new SftpClient(new PasswordConnectionInfo(_sshConfig.Host, _sshConfig.Port, _sshConfig.UserName, _sshConfig.Password));
         }       
+
         public void ShowFiles(string  pathFile)
         {
             using (var sftp = SFTPConnect())

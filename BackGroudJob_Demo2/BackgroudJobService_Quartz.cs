@@ -46,7 +46,11 @@ namespace BackGroudJob_Demo2
                 //    Port = 22
                 //};
 
-                //await SSH(1,configRebex);
+                //await SSH(1, configRebex,"./test");
+                //await SSH(2, configRebex, "textDelete.txt");
+                //await SSH(3, configRebex, "textDownload.txt", "F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileCSV\\");
+                //await SSH(4, configRebex, "textReName1.txt", "textReName2.txt");
+
 
                 //var usersResponse = await _httpClient.GetAsync("https://localhost:7156/api/User");
                 //usersResponse.EnsureSuccessStatusCode();
@@ -98,23 +102,34 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async Task SSH(int number , SSHConfiguration config)
+        public async Task SSH(int number , SSHConfiguration config, params Object[] args)
         {
             var sSH_Net = new SSH_Net(config);
 
-            switch (number) 
+            switch (number)
             {
                 case 1:
-                    sSH_Net.ShowFiles("./test");
+                    if (args.Length > 0 && args[0] is string showFile) {
+                        sSH_Net.ShowFiles(showFile);
+                    }
                     break;
                 case 2:
-                    sSH_Net.DeleteFile("textDelete.txt");
+                    if (args.Length > 0 && args[0] is string deleteFile)
+                    {
+                        sSH_Net.DeleteFile(deleteFile);
+                    }
                     break;
                 case 3:
-                    sSH_Net.DownloadFiles("textDownload.txt", "F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileCSV\\");
+                    if (args.Length > 0 && args[0] is string serverFile && args[0] is string pathLocalFile)
+                    {
+                        sSH_Net.DownloadFiles(serverFile, pathLocalFile);
+                    }
                     break;
                 case 4:
-                    sSH_Net.ReNameFile("textReName1.txt", "textReName2.txt");
+                    if (args.Length > 0 && args[0] is string nameServerFile && args[1] is string newNameFile) 
+                    { 
+                        sSH_Net.ReNameFile(nameServerFile, newNameFile);
+                    }
                     break;
                 default:
                     Console.WriteLine("Error");
