@@ -1,11 +1,14 @@
 ﻿using BackGroudJob_Demo2.Data;
 using BackGroudJob_Demo2.Data.Models;
+using BackGroudJob_Demo2.DTOs;
 using CsvHelper;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
 using Quartz;
+using Renci.SshNet;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -35,14 +38,21 @@ namespace BackGroudJob_Demo2
             {
                 _logger.LogInformation("Start");
 
-                SSH_Net sSH_Net = new SSH_Net();
-                sSH_Net.ListFiles();
+                //var configRebex = new SSHConfiguration
+                //{
+                //    Host = "192.168.1.87",
+                //    UserName = "tester",
+                //    Password = "password",
+                //    Port = 22
+                //};
+
+                //await SSH(1,configRebex);
 
                 //var usersResponse = await _httpClient.GetAsync("https://localhost:7156/api/User");
                 //usersResponse.EnsureSuccessStatusCode();
 
                 //var usersResponseContent = await usersResponse.Content.ReadAsStringAsync();
-              
+
                 //if (string.IsNullOrWhiteSpace(usersResponseContent))
                 //{
                 //    _logger.LogInformation("User null");
@@ -85,6 +95,30 @@ namespace BackGroudJob_Demo2
             catch (Exception ex)
             {
                 _logger.LogError($"Unexpected error: {ex.Message}");
+            }
+        }
+
+        public async Task SSH(int number , SSHConfiguration config)
+        {
+            var sSH_Net = new SSH_Net(config);
+
+            switch (number) 
+            {
+                case 1:
+                    sSH_Net.ShowFiles("./test");
+                    break;
+                case 2:
+                    sSH_Net.DeleteFile("textDelete.txt");
+                    break;
+                case 3:
+                    sSH_Net.DownloadFiles("textDownload.txt", "F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileCSV\\");
+                    break;
+                case 4:
+                    sSH_Net.ReNameFile("textReName1.txt", "textReName2.txt");
+                    break;
+                default:
+                    Console.WriteLine("Error");
+                    break;
             }
         }
 

@@ -1,4 +1,4 @@
-﻿namespace BackGroudJob_Demo2
+﻿namespace BackGroudJob_Demo2.DTOs
 {
     public class UserInfoResponse
     {

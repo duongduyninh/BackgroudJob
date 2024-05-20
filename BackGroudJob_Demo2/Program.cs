@@ -1,5 +1,6 @@
 using BackGroudJob_Demo2;
 using BackGroudJob_Demo2.Data;
+using BackGroudJob_Demo2.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Quartz;
 
@@ -11,13 +12,15 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddSingleton<SSHConfiguration>();
+builder.Services.AddSingleton<SSH_Net>();
+
+
 builder.Services.AddDbContext<Dbcontext_User>(options =>
 {
     var connectionString = builder.Configuration.GetConnectionString("DbcontextUser");
     options.UseSqlServer(connectionString);
 });
-
-builder.Services.AddSingleton<SSH_Net>();
 
 builder.Services.AddQuartz(options =>
 {

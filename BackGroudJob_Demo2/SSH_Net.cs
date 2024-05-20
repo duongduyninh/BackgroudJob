@@ -1,33 +1,43 @@
-﻿using Renci.SshNet;
+﻿using BackGroudJob_Demo2.DTOs;
+using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
+using Microsoft.Extensions.Hosting;
+using Renci.SshNet;
 using System;
 using System.IO;
 using System.Threading.Tasks;
+using static System.Net.WebRequestMethods;
+using File = System.IO.File;
 
 namespace BackGroudJob_Demo2
 {
     public class SSH_Net
     {
-        public void ListFiles()
+        private readonly SSHConfiguration _sshConfig;
+
+        public SSH_Net(SSHConfiguration sshConfig) 
         {
-            var host = "192.168.1.87";
-            var username = "tester";
-            var password = "password";
+            _sshConfig = sshConfig;
+        }
 
-            var remoteDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileCSV\\";
-
-            using (SftpClient sftp = new SftpClient(new PasswordConnectionInfo(host, 22, username, password)))
+        private SftpClient SFTPConnect()
+        {
+            return new SftpClient(new PasswordConnectionInfo(_sshConfig.Host, _sshConfig.Port, _sshConfig.UserName, _sshConfig.Password));
+        }       
+        public void ShowFiles(string  pathFile)
+        {
+            using (var sftp = SFTPConnect())
             {
                 try
                 {
                     sftp.Connect();
 
-                    var files =  sftp.ListDirectory("/data/");
+                    var files = sftp.ListDirectory(pathFile);
 
                     foreach (var file in files)
                     {
                         Console.WriteLine(file.Name);
                     }
-                    
+
                     sftp.Disconnect();
                 }
                 catch (Exception ex)
@@ -36,5 +46,63 @@ namespace BackGroudJob_Demo2
                 }
             }
         }
+
+        public void DownloadFiles(string pathServerFile , string localFile) 
+        {
+
+            using (var sftp = SFTPConnect())
+            {
+                try
+                {
+                    sftp.Connect();
+
+                    using (var handleLocalFile = File.OpenWrite(Path.Combine(localFile, pathServerFile)))
+                    {
+                        sftp.DownloadFile(pathServerFile, handleLocalFile);
+                    }
+                    sftp.Disconnect();
+
+                }catch (Exception ex) { Console.WriteLine(ex.ToString()); }
+            }
+        }
+
+        public void ReNameFile (string existingName , string newName) 
+        {
+            using (var sftp = SFTPConnect())
+            {
+                try
+                {
+                    sftp.Connect();
+                    sftp.RenameFile(existingName, newName);
+                    sftp.Disconnect();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.ToString());
+                }
+            }
+        }
+
+        public void DeleteFile (string existingName) 
+        { 
+            using (var sftp = SFTPConnect()) 
+            {
+                try
+                {
+                    sftp.Connect();
+
+                    if (sftp.Exists(existingName))
+                    {
+                        sftp.Delete(existingName);
+                    }  
+                    sftp.Disconnect();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());       
+                }
+            }
+        }    
+
     }
 }
