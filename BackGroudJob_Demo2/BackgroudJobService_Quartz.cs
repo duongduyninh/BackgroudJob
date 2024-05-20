@@ -35,40 +35,43 @@ namespace BackGroudJob_Demo2
             {
                 _logger.LogInformation("Start");
 
-                var usersResponse = await _httpClient.GetAsync("https://localhost:7156/api/User");
-                usersResponse.EnsureSuccessStatusCode();
+                SSH_Net sSH_Net = new SSH_Net();
+                sSH_Net.ListFiles();
 
-                var usersResponseContent = await usersResponse.Content.ReadAsStringAsync();
+                //var usersResponse = await _httpClient.GetAsync("https://localhost:7156/api/User");
+                //usersResponse.EnsureSuccessStatusCode();
+
+                //var usersResponseContent = await usersResponse.Content.ReadAsStringAsync();
               
-                if (string.IsNullOrWhiteSpace(usersResponseContent))
-                {
-                    _logger.LogInformation("User null");
-                }
+                //if (string.IsNullOrWhiteSpace(usersResponseContent))
+                //{
+                //    _logger.LogInformation("User null");
+                //}
 
-                var settings = new JsonSerializerSettings
-                {
-                    ContractResolver = new DefaultContractResolver()
-                };
+                //var settings = new JsonSerializerSettings
+                //{
+                //    ContractResolver = new DefaultContractResolver()
+                //};
 
-                var userInfoResponse = JsonConvert.DeserializeObject<UserInfoResponse>(usersResponseContent, settings);
+                //var userInfoResponse = JsonConvert.DeserializeObject<UserInfoResponse>(usersResponseContent, settings);
 
-                List<UserInfo> usersStatus1 = userInfoResponse.UserInfos.Where(x => x.Status == 1).ToList();
-                List<UserInfo> usersStatus0 = userInfoResponse.UserInfos.Where(x => x.Status == 0).ToList();
+                //List<UserInfo> usersStatus1 = userInfoResponse.UserInfos.Where(x => x.Status == 1).ToList();
+                //List<UserInfo> usersStatus0 = userInfoResponse.UserInfos.Where(x => x.Status == 0).ToList();
 
-                var firtFileName = "namefile";
-                var fileExtension = ".csv";
-                var getDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory ) + "\\Files\\FileCSV\\";
+                //var firtFileName = "namefile";
+                //var fileExtension = ".csv";
+                //var getDirectory = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory ) + "\\Files\\FileCSV\\";
 
-                if (!Directory.Exists(getDirectory))
-                {
-                   System.IO.Directory.CreateDirectory(getDirectory);
-                }
+                //if (!Directory.Exists(getDirectory))
+                //{
+                //   System.IO.Directory.CreateDirectory(getDirectory);
+                //}
 
-                var time = DateTime.Now.ToString("yyyyMMddHHmmss");
-                var pathFile = getDirectory + firtFileName + "_" + time + fileExtension;
+                //var time = DateTime.Now.ToString("yyyyMMddHHmmss");
+                //var pathFile = getDirectory + firtFileName + "_" + time + fileExtension;
 
-                await InsertUsersIntoDatabase(usersStatus1);
-                await ExportFileCSV(usersStatus0, pathFile);
+                //await InsertUsersIntoDatabase(usersStatus1);
+                //await ExportFileCSV(usersStatus0, pathFile);
 
             }
             catch (HttpRequestException ex)
@@ -102,7 +105,6 @@ namespace BackGroudJob_Demo2
 
             try
             {
-                _context.SaveChanges();
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)
@@ -111,7 +113,7 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async Task ExportFileCSV(List<UserInfo> userInfos , string pathFile)
+        public async Task  ExportFileCSV(List<UserInfo> userInfos , string pathFile)
         {
             try
             {

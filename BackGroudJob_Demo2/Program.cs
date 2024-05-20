@@ -10,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<Dbcontext_User>(options =>
 {
@@ -18,7 +17,7 @@ builder.Services.AddDbContext<Dbcontext_User>(options =>
     options.UseSqlServer(connectionString);
 });
 
-//builder.Services.AddHostedService<BackgroundJobService>();
+builder.Services.AddSingleton<SSH_Net>();
 
 builder.Services.AddQuartz(options =>
 {
