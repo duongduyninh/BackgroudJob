@@ -2,8 +2,11 @@
 using BackGroudJob_Demo2.Data.Models;
 using BackGroudJob_Demo2.DTOs;
 using CsvHelper;
+using MailKit.Security;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using MimeKit;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
@@ -11,9 +14,12 @@ using Quartz;
 using Renci.SshNet;
 using System.Globalization;
 using System.IO;
+using System.Net.Mail;
 using System.Reflection;
 using System.Text.Json;
+using static System.Net.WebRequestMethods;
 using JsonException = Newtonsoft.Json.JsonException;
+using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 
 
 namespace BackGroudJob_Demo2
@@ -22,14 +28,17 @@ namespace BackGroudJob_Demo2
     {
         private readonly ILogger<BackgroundJobService> _logger;
         private readonly Dbcontext_User _context;
+        private readonly SendMailSettings _sendMainConfig;
         private readonly HttpClient _httpClient = new HttpClient();
 
 
         public BackgroudJobService_Quartz(ILogger<BackgroundJobService> logger,
-                                          Dbcontext_User context)
+                                          Dbcontext_User context,
+                                          IOptions <SendMailSettings> sendMainConfig)
         {
             _logger = logger;
             _context = context;
+            _sendMainConfig = sendMainConfig.Value;
         }
 
         public async Task Execute(IJobExecutionContext t)
@@ -37,6 +46,11 @@ namespace BackGroudJob_Demo2
             try
             {
                 _logger.LogInformation("Start");
+
+                await SendMailEthereal("heoninh47@gmail.com","Hello","dem qua e tuyet lam");
+                await SendMailSmtp4dev("heoninh444@gmail.com","Hello","dem qua e tuyet lam");
+
+                /*---------------------------------------------------------------*/
 
                 //var configRebex = new SSHConfiguration
                 //{
@@ -51,26 +65,14 @@ namespace BackGroudJob_Demo2
                 //await SSH(3, configRebex, "textDownload.txt", "F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileCSV\\");
                 //await SSH(4, configRebex, "textReName1.txt", "textReName2.txt");
 
+                /*---------------------------------------------------------------*/
 
-                //var usersResponse = await _httpClient.GetAsync("https://localhost:7156/api/User");
-                //usersResponse.EnsureSuccessStatusCode();
+                //string GetUsersURL = "https://localhost:7156/api/User";
 
-                //var usersResponseContent = await usersResponse.Content.ReadAsStringAsync();
+                //var resultGetUsers = await GetAPIAsync<UserInfoResponse>(GetUsersURL, "GetUsers");
 
-                //if (string.IsNullOrWhiteSpace(usersResponseContent))
-                //{
-                //    _logger.LogInformation("User null");
-                //}
-
-                //var settings = new JsonSerializerSettings
-                //{
-                //    ContractResolver = new DefaultContractResolver()
-                //};
-
-                //var userInfoResponse = JsonConvert.DeserializeObject<UserInfoResponse>(usersResponseContent, settings);
-
-                //List<UserInfo> usersStatus1 = userInfoResponse.UserInfos.Where(x => x.Status == 1).ToList();
-                //List<UserInfo> usersStatus0 = userInfoResponse.UserInfos.Where(x => x.Status == 0).ToList();
+                //List<UserInfo> usersStatus1 = resultGetUsers.UserInfos.Where(x=>x.Status  == 1 ).ToList();   
+                //List<UserInfo> usersStatus0 = resultGetUsers.UserInfos.Where(x=>x.Status  == 0 ).ToList();
 
                 //var firtFileName = "namefile";
                 //var fileExtension = ".csv";
@@ -100,6 +102,114 @@ namespace BackGroudJob_Demo2
             {
                 _logger.LogError($"Unexpected error: {ex.Message}");
             }
+        }
+
+        public async Task<T> GetAPIAsync<T>(string url, string nameAPICall)
+        {
+            try
+            {
+                var reponse = await _httpClient.GetAsync(url);
+                reponse.EnsureSuccessStatusCode();
+
+                var reponseContent = await reponse.Content.ReadAsStringAsync();
+                if (string.IsNullOrWhiteSpace(reponseContent))
+                {
+                    _logger.LogInformation("Reponse content null" + nameAPICall);
+                    return default(T);  
+                }
+
+                var settings = new JsonSerializerSettings
+                {
+                    ContractResolver = new DefaultContractResolver()
+                };
+
+                var result = JsonConvert.DeserializeObject<T>(reponseContent);
+
+                return result;
+
+            }catch (HttpRequestException ex)
+            {
+                _logger.LogError($"Error Http,{ex.Message}"); 
+                return default(T);  
+            }catch (Exception ex)
+            {
+                _logger.LogError($"Error,{ex.Message}");
+                return default(T);
+
+            }
+        }
+
+        public async Task SendMail(string toAddress, SendMailSettings configMail, params Object[] args)
+        {
+            try
+            {
+                using( var email = new MimeMessage())
+                {
+                    string subject = (string)args[0];
+                    string body = (string)args[1];
+
+                    email.From.Add(new MailboxAddress("Server", configMail.SenderEmail));
+                    email.To.Add(new MailboxAddress("customer", toAddress));
+
+                    email.Subject = subject;
+
+                    var builder = new BodyBuilder()
+                    {
+                        TextBody = body
+                    };
+
+                    email.Body = builder.ToMessageBody();
+
+                    using (var smtp = new SmtpClient())
+                    {
+                        smtp.Connect(configMail.SmtpServer, configMail.SmtpPort, false );
+
+                        if (configMail.StatusAuthentication)
+                        {
+                            smtp.Authenticate(configMail.SenderEmail, configMail.Password);
+                        }
+
+                        smtp.Send(email);
+                        Console.WriteLine("SendMail true");
+                    }
+                }
+            }catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+       
+        public async Task SendMailEthereal(string toAddress, params Object[] args)
+        {
+            //ethereal.email
+            var config = new SendMailSettings
+            {
+                SmtpServer = _sendMainConfig.SmtpServer,
+                SenderEmail = _sendMainConfig.SenderEmail,  
+                SenderName = _sendMainConfig.SenderName,    
+                SmtpPort = _sendMainConfig.SmtpPort,    
+                Password = _sendMainConfig.Password,
+                StatusAuthentication = true,
+            };
+
+            await SendMail(toAddress, config, args);
+
+        }
+
+        public async Task SendMailSmtp4dev (string toAddress, params Object[] args)
+        {
+            //Smtp4dev
+            var config = new SendMailSettings
+            {
+                SmtpServer = "localhost",
+                SenderEmail = "beNinh@gmail.com",
+                SenderName = "beNinh6mui",
+                SmtpPort = 25,
+                Password = string.Empty,
+                StatusAuthentication = false,
+            };
+
+            await SendMail(toAddress, config, args);
         }
 
         public async Task SSH(int number , SSHConfiguration config, params Object[] args)

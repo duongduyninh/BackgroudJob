@@ -48,7 +48,7 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public void DownloadFiles(string pathServerFile , string localFile) 
+        public void DownloadFiles(string ServerFile , string pathLocalFile) 
         {
 
             using (var sftp = SFTPConnect())
@@ -57,9 +57,9 @@ namespace BackGroudJob_Demo2
                 {
                     sftp.Connect();
 
-                    using (var handleLocalFile = File.OpenWrite(Path.Combine(localFile, pathServerFile)))
+                    using (var handleLocalFile = File.OpenWrite(Path.Combine(pathLocalFile, ServerFile)))
                     {
-                        sftp.DownloadFile(pathServerFile, handleLocalFile);
+                        sftp.DownloadFile(ServerFile, handleLocalFile);
                     }
                     sftp.Disconnect();
 

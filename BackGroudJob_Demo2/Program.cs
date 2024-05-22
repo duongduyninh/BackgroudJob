@@ -2,6 +2,7 @@ using BackGroudJob_Demo2;
 using BackGroudJob_Demo2.Data;
 using BackGroudJob_Demo2.DTOs;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Quartz;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,6 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSingleton<SSHConfiguration>();
 builder.Services.AddSingleton<SSH_Net>();
+builder.Services.Configure<SendMailSettings>(builder.Configuration.GetSection("SendMail"));
 
 
 builder.Services.AddDbContext<Dbcontext_User>(options =>
