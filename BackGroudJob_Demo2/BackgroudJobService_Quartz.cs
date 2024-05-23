@@ -10,12 +10,15 @@ using MimeKit;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json.Serialization;
+using Org.BouncyCastle.Asn1.Ocsp;
 using Quartz;
 using Renci.SshNet;
 using System.Globalization;
 using System.IO;
+using System.Net.Http;
 using System.Net.Mail;
 using System.Reflection;
+using System.Text;
 using System.Text.Json;
 using static System.Net.WebRequestMethods;
 using JsonException = Newtonsoft.Json.JsonException;
@@ -47,8 +50,8 @@ namespace BackGroudJob_Demo2
             {
                 _logger.LogInformation("Start");
 
-                await SendMailEthereal("heoninh47@gmail.com","Hello","dem qua e tuyet lam");
-                await SendMailSmtp4dev("heoninh444@gmail.com","Hello","dem qua e tuyet lam");
+                //await SendMailEthereal("heoninh47@gmail.com","Hello","dem qua e tuyet lam");
+                //await SendMailSmtp4dev("heoninh444@gmail.com","Hello","dem qua e tuyet lam");
 
                 /*---------------------------------------------------------------*/
 
@@ -89,6 +92,14 @@ namespace BackGroudJob_Demo2
                 //await InsertUsersIntoDatabase(usersStatus1);
                 //await ExportFileCSV(usersStatus0, pathFile);
 
+                /*---------------------------------------------------------------*/
+                //string GetUsersURL = "https://localhost:7156/api/User";
+                //var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
+                /*--------------------------*/
+                //string PostUserURL = "https://localhost:7156/api/User";
+                //var result = await PostAPIAsync<>(PostUserURL);
+
+
             }
             catch (HttpRequestException ex)
             {
@@ -104,40 +115,102 @@ namespace BackGroudJob_Demo2
             }
         }
 
-        public async Task<T> GetAPIAsync<T>(string url, string nameAPICall)
+        public async Task<T> HandleAPIResponse<T>(HttpResponseMessage response) where T : baseResponse, new()
         {
+            var responseContent = await response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode) 
+            {
+                _logger.LogError("UnSuccess", (int)response.StatusCode, responseContent);
+                T error = new T { StatusCodeAPI = (int)response.StatusCode , Message = responseContent } ; 
+                return error;
+            }
+
             try
             {
-                var reponse = await _httpClient.GetAsync(url);
-                reponse.EnsureSuccessStatusCode();
-
-                var reponseContent = await reponse.Content.ReadAsStringAsync();
-                if (string.IsNullOrWhiteSpace(reponseContent))
-                {
-                    _logger.LogInformation("Reponse content null" + nameAPICall);
-                    return default(T);  
-                }
-
-                var settings = new JsonSerializerSettings
-                {
-                    ContractResolver = new DefaultContractResolver()
-                };
-
-                var result = JsonConvert.DeserializeObject<T>(reponseContent);
-
+                
+                var result = JsonConvert.DeserializeObject<T>(responseContent);
+                result.StatusCodeAPI = (int)response.StatusCode;
                 return result;
-
-            }catch (HttpRequestException ex)
+            }
+            catch (JsonException ex)
             {
-                _logger.LogError($"Error Http,{ex.Message}"); 
-                return default(T);  
-            }catch (Exception ex)
-            {
-                _logger.LogError($"Error,{ex.Message}");
-                return default(T);
-
+                _logger.LogError("Error deserializing response: {Exception}", ex);
+                return null;
             }
         }
+
+        public async Task<T> GetAPIAsync<T>(string url) where T : baseResponse , new()
+        {
+            var response = await _httpClient.GetAsync(url);
+            return await HandleAPIResponse<T>(response);
+        }
+
+        public async Task<T> PostAPIAsync<T , TRequest>(string url, TRequest request) where T : baseResponse , new()
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PostAsync(url, content);
+            return await HandleAPIResponse<T>(response);
+        }
+
+        public async Task<T> PutAPIAsync<T , TRequest>(string url , TRequest request) where T : baseResponse , new()
+        {
+            var json = JsonConvert.SerializeObject(request);
+            var content = new StringContent (json, Encoding.UTF8, "application/json");
+            var response = await _httpClient.PutAsync(url, content);
+            return await HandleAPIResponse<T>(response);
+        }
+
+        public async Task<T> DeleteAPIAsync<T>(string url) where T:baseResponse , new() 
+        {
+            var response = await _httpClient.DeleteAsync(url);
+            var responseContent = await response.Content.ReadAsStringAsync();
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError("UnSuccess:"+ (int)response.StatusCode , "," +responseContent);
+                return new T { StatusCodeAPI = (int)response.StatusCode, Message = responseContent };
+            }
+            return new T
+            {
+                StatusCodeAPI = (int)response.StatusCode,
+                Message = responseContent
+            };
+        }   
+
+        //public async Task<T> GetAPIAsync<T>(string url, string nameAPICall)
+        //{
+        //    try
+        //    {
+        //        var reponse = await _httpClient.GetAsync(url);
+        //        reponse.EnsureSuccessStatusCode();
+
+        //        var reponseContent = await reponse.Content.ReadAsStringAsync();
+        //        if (string.IsNullOrWhiteSpace(reponseContent))
+        //        {
+        //            _logger.LogInformation("Reponse content null" + nameAPICall);
+        //            return default(T);  
+        //        }
+
+        //        var settings = new JsonSerializerSettings
+        //        {
+        //            ContractResolver = new DefaultContractResolver()
+        //        };
+
+        //        var result = JsonConvert.DeserializeObject<T>(reponseContent);
+
+        //        return result;
+
+        //    }catch (HttpRequestException ex)
+        //    {
+        //        _logger.LogError($"Error Http,{ex.Message}"); 
+        //        return default(T);  
+        //    }catch (Exception ex)
+        //    {
+        //        _logger.LogError($"Error,{ex.Message}");
+        //        return default(T);
+
+        //    }
+        //}
 
         public async Task SendMail(string toAddress, SendMailSettings configMail, params Object[] args)
         {
