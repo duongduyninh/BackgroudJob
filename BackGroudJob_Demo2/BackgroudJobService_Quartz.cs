@@ -96,10 +96,51 @@ namespace BackGroudJob_Demo2
                 //string GetUsersURL = "https://localhost:7156/api/User";
                 //var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
                 /*--------------------------*/
-                //string PostUserURL = "https://localhost:7156/api/User";
-                //var result = await PostAPIAsync<>(PostUserURL);
+                //string postuserurl = "https://localhost:7156/api/user";
+                //var request = new Adduserrequest
+                //{
+                //    Username = "ninhdeptrai",
+                //    Email = "ninhdeptraiihon@gmail.com",
+                //    Discription = "qua depj trai",
+                //    Phonenumber = 545685654,
+                //    Status = 1
+                //};
+                //var result = await postapiasync<adduserresponse, adduserrequest>(postuserurl, request);
+                /*--------------------------*/
+                //string PostUserURL = "https://localhost:7156/api/User/AddUsers";
+                //List<AddUserRequest> users = new List<AddUserRequest>();
 
-
+                //for (int i = 0; i < 3; i++)
+                //{
+                //    AddUserRequest user = new AddUserRequest
+                //    {
+                //        UserName = "ninhdeptrai" + i,
+                //        Email = "Ninhdeptraiihon" + i + "@gmail.com",
+                //        Discription = "qua depj trai" + i,
+                //        Status = 1
+                //    };
+                //    users.Add(user);
+                //}
+                //AddUsersRequest request = new AddUsersRequest 
+                //{
+                //    UserInfos = users,
+                //};
+                //var result = await PostAPIAsync<AddUserResponse, AddUsersRequest>(PostUserURL, request);
+                /*--------------------------*/
+                //string PutUserURL = "https://localhost:7156/api/User";
+                //var request = new UpdateUserRequest
+                //{
+                //    UserId = 2,
+                //    UserName = "ninhdeptrai",
+                //    Email = "ninhdeptraiihon@gmail.com",
+                //    Description= "qua depj trai",
+                //    PhoneNumber = 545685654,
+                //    Status = 1
+                //};
+                //var result = await PutAPIAsync<UpdateUserResponse, UpdateUserRequest>(PutUserURL, request);
+                /*--------------------------*/
+                //string DeleteUserURL = "https://localhost:7156/api/User/"+ 10;
+                //var result = await DeleteAPIAsync<DeleteUserResponse>(DeleteUserURL);
             }
             catch (HttpRequestException ex)
             {
@@ -120,21 +161,20 @@ namespace BackGroudJob_Demo2
             var responseContent = await response.Content.ReadAsStringAsync();
             if (!response.IsSuccessStatusCode) 
             {
-                _logger.LogError("UnSuccess", (int)response.StatusCode, responseContent);
+               // _logger.LogError("UnSuccess: {0} {1} ", (int)response.StatusCode, responseContent);
                 T error = new T { StatusCodeAPI = (int)response.StatusCode , Message = responseContent } ; 
                 return error;
             }
 
             try
             {
-                
                 var result = JsonConvert.DeserializeObject<T>(responseContent);
                 result.StatusCodeAPI = (int)response.StatusCode;
                 return result;
             }
             catch (JsonException ex)
             {
-                _logger.LogError("Error deserializing response: {Exception}", ex);
+                _logger.LogError($"Error deserializing response: {ex}");
                 return null;
             }
         }
