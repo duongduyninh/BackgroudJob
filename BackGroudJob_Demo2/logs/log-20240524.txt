@@ -1,0 +1,309 @@
+2024-05-24 10:19:01.319 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:19:01.662 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:19:01.663 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:19:01.664 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:19:01.665 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:19:01.666 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:19:01.666 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:19:01.667 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:19:01.677 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:19:01.680 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:19:02.021 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:19:02.023 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:19:02.025 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:19:02.026 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:19:02.026 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:19:02.027 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:19:02.326 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:19:02.427 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:19:02.471 +07:00 [INF] Start
+2024-05-24 10:19:02.555 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 233.6804ms
+2024-05-24 10:19:02.567 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:19:02.567 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:19:02.579 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 12.3723ms
+2024-05-24 10:19:02.614 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 47.0152ms
+2024-05-24 10:19:02.637 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:19:02.640 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:19:02.644 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 7.6269ms
+2024-05-24 10:19:15.619 +07:00 [INF] Start
+2024-05-24 10:19:30.621 +07:00 [INF] Start
+2024-05-24 10:19:45.615 +07:00 [INF] Start
+2024-05-24 10:20:00.612 +07:00 [INF] Start
+2024-05-24 10:20:15.611 +07:00 [INF] Start
+2024-05-24 10:20:30.616 +07:00 [INF] Start
+2024-05-24 10:20:45.615 +07:00 [INF] Start
+2024-05-24 10:21:52.657 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:21:52.756 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:21:52.763 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:21:52.764 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:21:52.765 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:21:52.766 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:21:52.767 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:21:52.767 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:21:52.774 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:21:52.776 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:21:52.887 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:21:52.889 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:21:52.890 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:21:52.890 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:21:52.891 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:21:52.892 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:21:53.036 +07:00 [INF] Start
+2024-05-24 10:21:53.390 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:21:53.424 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:21:53.460 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 73.4991ms
+2024-05-24 10:21:53.473 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:21:53.473 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:21:53.479 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 5.8875ms
+2024-05-24 10:21:53.503 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 29.4577ms
+2024-05-24 10:21:53.525 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:21:53.528 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:21:53.531 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 6.407ms
+2024-05-24 10:21:57.196 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:22:07.520 +07:00 [INF] Start
+2024-05-24 10:22:11.635 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:22:22.517 +07:00 [INF] Start
+2024-05-24 10:22:26.635 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:22:37.522 +07:00 [INF] Start
+2024-05-24 10:22:41.644 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:22:52.517 +07:00 [INF] Start
+2024-05-24 10:22:56.630 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:25:04.424 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:25:04.556 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:25:04.557 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:25:04.559 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:25:04.560 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:25:04.562 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:25:04.563 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:25:04.564 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:25:04.577 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:25:04.582 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:25:04.706 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:25:04.708 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:25:04.710 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:25:04.711 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:25:04.712 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:25:04.714 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:25:04.849 +07:00 [INF] Start
+2024-05-24 10:25:05.022 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:25:05.054 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:25:05.092 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 74.2883ms
+2024-05-24 10:25:05.108 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:25:05.108 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:25:05.120 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 11.7994ms
+2024-05-24 10:25:05.149 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 40.8816ms
+2024-05-24 10:25:05.172 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:25:05.175 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:25:05.179 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 6.6883ms
+2024-05-24 10:25:13.479 +07:00 [ERR] Error deserializing response: Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'BackGroudJob_Demo2.Data.Models.User' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'userInfos', line 1, position 54.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at BackGroudJob_Demo2.BackgroudJobService_Quartz.HandleAPIResponse[T](HttpResponseMessage response) in F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2\BackgroudJobService_Quartz.cs:line 171
+2024-05-24 10:26:41.813 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:26:41.979 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:26:41.981 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:26:41.982 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:26:41.983 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:26:41.985 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:26:41.986 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:26:41.987 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:26:41.996 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:26:41.999 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:26:42.147 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:26:42.149 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:26:42.150 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:26:42.151 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:26:42.151 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:26:42.152 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:26:42.272 +07:00 [INF] Start
+2024-05-24 10:26:51.823 +07:00 [ERR] Error deserializing response: Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'BackGroudJob_Demo2.Data.Models.User' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'userInfos', line 1, position 54.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at BackGroudJob_Demo2.BackgroudJobService_Quartz.HandleAPIResponse[T](HttpResponseMessage response) in F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2\BackgroudJobService_Quartz.cs:line 171
+Newtonsoft.Json.JsonSerializationException: Cannot deserialize the current JSON array (e.g. [1,2,3]) into type 'BackGroudJob_Demo2.Data.Models.User' because the type requires a JSON object (e.g. {"name":"value"}) to deserialize correctly.
+To fix this error either change the JSON to a JSON object (e.g. {"name":"value"}) or change the deserialized type to an array or a type that implements a collection interface (e.g. ICollection, IList) like List<T> that can be deserialized from a JSON array. JsonArrayAttribute can also be added to the type to force it to deserialize from a JSON array.
+Path 'userInfos', line 1, position 54.
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.EnsureArrayContract(JsonReader reader, Type objectType, JsonContract contract)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateList(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, Object existingValue, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.SetPropertyValue(JsonProperty property, JsonConverter propertyConverter, JsonContainerContract containerContract, JsonProperty containerProperty, JsonReader reader, Object target)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PopulateObject(Object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty member, String id)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateObject(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.CreateValueInternal(JsonReader reader, Type objectType, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerMember, Object existingValue)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at BackGroudJob_Demo2.BackgroudJobService_Quartz.HandleAPIResponse[T](HttpResponseMessage response) in F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2\BackgroudJobService_Quartz.cs:line 171
+2024-05-24 10:35:31.325 +07:00 [INF] Start
+2024-05-24 10:37:19.669 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:37:19.815 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:37:19.826 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:37:19.828 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:37:19.829 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:37:19.831 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:37:19.832 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:37:19.834 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:37:19.844 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:37:19.847 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:37:19.971 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:37:19.972 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:37:19.973 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:37:19.974 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:37:19.975 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:37:19.975 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:37:20.105 +07:00 [INF] Start
+2024-05-24 10:37:20.197 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:37:20.238 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:37:20.280 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 85.4675ms
+2024-05-24 10:37:20.295 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:37:20.295 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:37:20.302 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 7.1542ms
+2024-05-24 10:37:20.336 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.2539ms
+2024-05-24 10:37:20.358 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:37:20.361 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:37:20.366 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 7.5929ms
+2024-05-24 10:37:24.256 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:37:34.531 +07:00 [INF] Start
+2024-05-24 10:37:38.649 +07:00 [ERR] Error calling API: No connection could be made because the target machine actively refused it. (localhost:7156)
+2024-05-24 10:37:49.528 +07:00 [INF] Start
+2024-05-24 10:37:58.859 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:37:58.985 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:37:58.986 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:37:58.987 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:37:58.988 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:37:58.989 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:37:58.990 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:37:58.991 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:37:58.999 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:37:59.001 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:37:59.133 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:37:59.135 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:37:59.136 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:37:59.137 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:37:59.138 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:37:59.139 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:37:59.244 +07:00 [INF] Start
+2024-05-24 10:37:59.484 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:37:59.514 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:37:59.554 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 72.7269ms
+2024-05-24 10:37:59.564 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:37:59.564 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:37:59.571 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 6.6089ms
+2024-05-24 10:37:59.597 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 32.7196ms
+2024-05-24 10:37:59.620 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:37:59.623 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:37:59.627 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 7.3462ms
+2024-05-24 10:38:13.698 +07:00 [INF] Start
+2024-05-24 10:38:28.692 +07:00 [INF] Start
+2024-05-24 10:38:43.692 +07:00 [INF] Start
+2024-05-24 10:38:58.692 +07:00 [INF] Start
+2024-05-24 10:39:13.690 +07:00 [INF] Start
+2024-05-24 10:53:25.835 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-05-24 10:53:25.967 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-05-24 10:53:25.976 +07:00 [INF] Quartz Scheduler created
+2024-05-24 10:53:25.978 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-05-24 10:53:25.978 +07:00 [INF] RAMJobStore initialized.
+2024-05-24 10:53:25.979 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-05-24 10:53:25.980 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-05-24 10:53:25.981 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-05-24 10:53:25.988 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-05-24 10:53:25.991 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-05-24 10:53:26.106 +07:00 [INF] Now listening on: https://localhost:7164
+2024-05-24 10:53:26.108 +07:00 [INF] Now listening on: http://localhost:5165
+2024-05-24 10:53:26.109 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-05-24 10:53:26.110 +07:00 [INF] Hosting environment: Development
+2024-05-24 10:53:26.112 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-05-24 10:53:26.113 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-05-24 10:53:26.330 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/ - null null
+2024-05-24 10:53:26.365 +07:00 [INF] Start
+2024-05-24 10:53:26.380 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:53:26.422 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/ - 500 null text/html; charset=utf-8 98.5393ms
+2024-05-24 10:53:26.440 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_vs/browserLink - null null
+2024-05-24 10:53:26.440 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - null null
+2024-05-24 10:53:26.458 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 18.6222ms
+2024-05-24 10:53:26.490 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/_vs/browserLink - 200 null text/javascript; charset=UTF-8 50.2202ms
+2024-05-24 10:53:26.517 +07:00 [INF] Request starting HTTP/2 GET https://localhost:7164/favicon.ico - null null
+2024-05-24 10:53:26.521 +07:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'Swashbuckle.AspNetCore.Swagger.ISwaggerProvider' while attempting to Invoke middleware 'Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware'.
+   at lambda_method6(Closure, Object, HttpContext, IServiceProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-05-24 10:53:26.525 +07:00 [INF] Request finished HTTP/2 GET https://localhost:7164/favicon.ico - 500 null text/plain; charset=utf-8 8.034ms
+2024-05-24 10:53:26.567 +07:00 [INF] BackGroudJob_Demo2.DTOs.GetUsersResponse
+2024-05-24 10:53:40.661 +07:00 [INF] Start
+2024-05-24 10:53:40.687 +07:00 [INF] BackGroudJob_Demo2.DTOs.GetUsersResponse
+2024-05-24 10:53:55.651 +07:00 [INF] Start
+2024-05-24 10:53:55.679 +07:00 [INF] BackGroudJob_Demo2.DTOs.GetUsersResponse

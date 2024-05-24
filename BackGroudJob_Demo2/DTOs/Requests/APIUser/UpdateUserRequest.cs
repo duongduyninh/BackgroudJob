@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BackGroudJob_Demo2.DTOs
+namespace BackGroudJob_Demo2.DTOs.Requests.APIUser
 {
     public class UpdateUserRequest
     {

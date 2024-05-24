@@ -1,6 +1,7 @@
 ﻿using BackGroudJob_Demo2.Data;
 using BackGroudJob_Demo2.Data.Models;
 using BackGroudJob_Demo2.DTOs;
+using BackGroudJob_Demo2.DTOs.Responses.APIUser;
 using CsvHelper;
 using MailKit.Security;
 using Microsoft.Extensions.Hosting;
@@ -93,8 +94,9 @@ namespace BackGroudJob_Demo2
                 //await ExportFileCSV(usersStatus0, pathFile);
 
                 /*---------------------------------------------------------------*/
-                //string GetUsersURL = "https://localhost:7156/api/User";
-                //var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
+                string GetUsersURL = "https://localhost:7156/api/User";
+                var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
+                _logger.LogInformation($"{result}");
                 /*--------------------------*/
                 //string postuserurl = "https://localhost:7156/api/user";
                 //var request = new Adduserrequest
@@ -174,7 +176,7 @@ namespace BackGroudJob_Demo2
             }
             catch (JsonException ex)
             {
-                _logger.LogError($"Error deserializing response: {ex}");
+                _logger.LogError(ex,$"Error deserializing response: {ex}");
                 return null;
             }
         }

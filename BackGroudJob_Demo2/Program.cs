@@ -4,6 +4,7 @@ using BackGroudJob_Demo2.DTOs;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Quartz;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,15 @@ builder.Services.AddSingleton<SSHConfiguration>();
 builder.Services.AddSingleton<SSH_Net>();
 builder.Services.Configure<SendMailSettings>(builder.Configuration.GetSection("SendMail"));
 
+builder.Host.UseSerilog();
+
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .Enrich.WithMachineName()
+    .Enrich.WithProcessId()
+    .Enrich.WithThreadId()
+    .CreateLogger();
 
 builder.Services.AddDbContext<Dbcontext_User>(options =>
 {

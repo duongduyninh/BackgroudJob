@@ -1,4 +1,4 @@
-﻿namespace BackGroudJob_Demo2.DTOs
+﻿namespace BackGroudJob_Demo2.DTOs.Responses.APIUser
 {
     public class GetUsersResponse : baseResponse
     {
