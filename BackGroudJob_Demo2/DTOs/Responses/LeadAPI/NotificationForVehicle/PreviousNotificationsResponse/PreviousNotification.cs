@@ -1,6 +1,6 @@
 ﻿namespace BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle.PreviousNotificationsResponse
 {
-    public class PreviouNotification
+    public class PreviousNotification
     {
         public string ChannelName { get; set; }
         public List<PreviousFeedback> PreviousFeedbacks { get; set; }

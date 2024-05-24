@@ -21,7 +21,7 @@ namespace BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle
 
         public Customer Customer { get; set; }
 
-        public List<PreviouNotification> previouNotifications { get; set; }
+        public List<PreviousNotification> PreviousNotifications { get; set; }
 
         public List<UpcomingNotification> UpcomingNotifications { get; set; }
 
