@@ -6,7 +6,7 @@
         public int RemainingDistance { get; set; }
         public DateTime DueDate { get; set; }
         public string Text { get; set; }
-        public DemandDetail DemandDetail { get; set; }
+        public DemandDetail? DemandDetail { get; set; }
         public int Counter { get; set; }
     }
 }

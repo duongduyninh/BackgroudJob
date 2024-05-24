@@ -2,7 +2,7 @@
 {
     public class DemandDetail
     {
-        public Sia SIA { get; set; }
-        public Bat BAT { get; set; }
+        public Sia? SIA { get; set; }
+        public Bat? BAT { get; set; }
     }
 }

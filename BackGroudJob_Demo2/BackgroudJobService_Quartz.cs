@@ -2,6 +2,7 @@
 using BackGroudJob_Demo2.Data.Models;
 using BackGroudJob_Demo2.DTOs;
 using BackGroudJob_Demo2.DTOs.Responses.APIUser;
+using BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle;
 using CsvHelper;
 using MailKit.Security;
 using Microsoft.Extensions.Hosting;
@@ -21,7 +22,9 @@ using System.Net.Mail;
 using System.Reflection;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using static System.Net.WebRequestMethods;
+using File = System.IO.File;
 using JsonException = Newtonsoft.Json.JsonException;
 using SmtpClient = MailKit.Net.Smtp.SmtpClient;
 
@@ -94,9 +97,9 @@ namespace BackGroudJob_Demo2
                 //await ExportFileCSV(usersStatus0, pathFile);
 
                 /*---------------------------------------------------------------*/
-                string GetUsersURL = "https://localhost:7156/api/User";
-                var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
-                _logger.LogInformation($"{result}");
+                //string GetUsersURL = "https://localhost:7156/api/User";
+                //var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
+                //_logger.LogInformation($"{result}");
                 /*--------------------------*/
                 //string postuserurl = "https://localhost:7156/api/user";
                 //var request = new Adduserrequest
@@ -143,6 +146,27 @@ namespace BackGroudJob_Demo2
                 /*--------------------------*/
                 //string DeleteUserURL = "https://localhost:7156/api/User/"+ 10;
                 //var result = await DeleteAPIAsync<DeleteUserResponse>(DeleteUserURL);
+                /*---------------------------------------------------------------*/
+                string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
+                string jsonContext = await File.ReadAllTextAsync(pathFileJson);
+
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                };
+
+                try
+                {
+                    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
+                }
+                catch (JsonException ex)
+                {
+                    Console.WriteLine($"Message JsonException: {ex.Message}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error Exception: {ex.Message}");
+                }
             }
             catch (HttpRequestException ex)
             {
