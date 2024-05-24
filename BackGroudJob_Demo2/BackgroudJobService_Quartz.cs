@@ -153,11 +153,24 @@ namespace BackGroudJob_Demo2
                 var settings = new JsonSerializerSettings
                 {
                     NullValueHandling = NullValueHandling.Ignore,
+                    Formatting = Formatting.Indented
                 };
 
                 try
                 {
                     NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
+                    var jsonExport = JsonConvert.SerializeObject(response, settings);
+                    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+
+                    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
+
+                    if (!Directory.Exists(pathFile))
+                    {
+                        System.IO.Directory.CreateDirectory(pathFile);
+                    }
+
+                    var filePath = Path.Combine(pathFile, fileName);
+                    File.WriteAllText(filePath, jsonExport);
                 }
                 catch (JsonException ex)
                 {
@@ -167,6 +180,17 @@ namespace BackGroudJob_Demo2
                 {
                     Console.WriteLine($"Error Exception: {ex.Message}");
                 }
+                /*---------------------------------------------------------------*/
+                //string filePath1 = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
+                //string filePath2 = @"F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileJson\\ExportedFile_20240524_142056.json";
+
+                //bool checkFileEquality = await CheckFileEquality(filePath1, filePath2);
+                //if (checkFileEquality)
+                //{
+                //    Console.WriteLine("file1 & file2 FIT");
+                //}
+
+
             }
             catch (HttpRequestException ex)
             {
@@ -432,6 +456,29 @@ namespace BackGroudJob_Demo2
                 Console.WriteLine("Error export file CSV: " + ex.Message);
             }
             Console.WriteLine(pathFile);
+        }
+
+        public async Task<bool> CheckFileEquality(string file1 , string file2)
+        {
+            string[] file1db = File.ReadAllLines(file1);
+            string[] file2db = File.ReadAllLines(file2);
+
+            //if (file1db.Length != file2db.Length)
+            //{
+            //    Console.WriteLine("Error 1");
+            //    return false;
+            //}
+
+            for (int i = 0; i < file1db.Length; i++)
+            {
+                if (file1db[i] != file2db[i])
+                {
+                    Console.WriteLine($"Error file no fit  {i + 1}.");
+                    return false;
+                }
+            }
+
+            return true;
         }
     }
 }

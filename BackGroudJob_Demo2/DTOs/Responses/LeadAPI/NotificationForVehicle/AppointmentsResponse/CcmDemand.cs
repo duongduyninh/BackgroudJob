@@ -3,6 +3,6 @@
     public class CcmDemand
     {
         public List<Ccm> Ccms { get; set; }
-        public int Counter { get; set; }
+        public int? Counter { get; set; }
     }
 }

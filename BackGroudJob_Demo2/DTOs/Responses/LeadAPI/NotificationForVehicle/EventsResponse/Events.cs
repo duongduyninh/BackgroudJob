@@ -8,6 +8,8 @@
 
         public List<UpcomingCbsEvents> UpcomingCbsEvents { get; set; }
 
+        public List<CurrentTireEvent> CurrentTireEvents { get; set; }
+
         public List<object> FurtherOpenTireEvents { get; set; }
 
         public List<object> UpcomingTireEvents { get; set; }

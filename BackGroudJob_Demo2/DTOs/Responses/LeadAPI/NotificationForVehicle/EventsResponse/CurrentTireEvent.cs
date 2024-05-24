@@ -2,9 +2,9 @@
 
 namespace BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle.EventsResponse
 {
-    public class CurrentCcmEvent
+    public class CurrentTireEvent
     {
-        public string CcmEventIdentifier { get; set; }
-        public CcmDemand CcmDemand { get; set; }
+        public string TireEventIdentifier { get; set; }
+        public TireDemand TireDemand { get; set; }
     }
 }

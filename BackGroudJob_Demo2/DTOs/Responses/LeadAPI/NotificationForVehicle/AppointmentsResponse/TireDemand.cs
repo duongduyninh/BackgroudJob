@@ -5,6 +5,6 @@
         public int RemainingDistance { get; set; }
         public int Counter { get; set; }
         public string Text { get; set; }
-        public int Urgency { get; set; }
+        public int? Urgency { get; set; }
     }
 }
