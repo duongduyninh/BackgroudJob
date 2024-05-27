@@ -5,6 +5,7 @@ using BackGroudJob_Demo2.DTOs.Responses.APIUser;
 using BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle;
 using CsvHelper;
 using MailKit.Security;
+using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -15,6 +16,7 @@ using Newtonsoft.Json.Serialization;
 using Org.BouncyCastle.Asn1.Ocsp;
 using Quartz;
 using Renci.SshNet;
+using System.Data.Common;
 using System.Globalization;
 using System.IO;
 using System.Net.Http;
@@ -99,7 +101,6 @@ namespace BackGroudJob_Demo2
                 /*---------------------------------------------------------------*/
                 //string GetUsersURL = "https://localhost:7156/api/User";
                 //var result = await GetAPIAsync<GetUsersResponse>(GetUsersURL);
-                //_logger.LogInformation($"{result}");
                 /*--------------------------*/
                 //string postuserurl = "https://localhost:7156/api/user";
                 //var request = new Adduserrequest
@@ -147,39 +148,35 @@ namespace BackGroudJob_Demo2
                 //string DeleteUserURL = "https://localhost:7156/api/User/"+ 10;
                 //var result = await DeleteAPIAsync<DeleteUserResponse>(DeleteUserURL);
                 /*---------------------------------------------------------------*/
-                string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
-                string jsonContext = await File.ReadAllTextAsync(pathFileJson);
+                //string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
+                //string jsonContext = await File.ReadAllTextAsync(pathFileJson);
 
-                var settings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    Formatting = Formatting.Indented
-                };
+                //var settings = new JsonSerializerSettings
+                //{
+                //    NullValueHandling = NullValueHandling.Ignore,
+                //    Formatting = Formatting.Indented
+                //};
 
-                try
-                {
-                    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
-                    var jsonExport = JsonConvert.SerializeObject(response, settings);
-                    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+                //try
+                //{
+                //    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
+                //    var jsonExport = JsonConvert.SerializeObject(response, settings);
+                //    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
 
-                    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
+                //    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
 
-                    if (!Directory.Exists(pathFile))
-                    {
-                        System.IO.Directory.CreateDirectory(pathFile);
-                    }
+                //    if (!Directory.Exists(pathFile))
+                //    {
+                //        System.IO.Directory.CreateDirectory(pathFile);
+                //    }
 
-                    var filePath = Path.Combine(pathFile, fileName);
-                    File.WriteAllText(filePath, jsonExport);
-                }
-                catch (JsonException ex)
-                {
-                    Console.WriteLine($"Message JsonException: {ex.Message}");
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error Exception: {ex.Message}");
-                }
+                //    var filePath = Path.Combine(pathFile, fileName);
+                //    File.WriteAllText(filePath, jsonExport);
+                //}
+                //catch (Exception ex)
+                //{
+                //    LoggerError(ex);
+                //}
                 /*---------------------------------------------------------------*/
                 //string filePath1 = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
                 //string filePath2 = @"F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileJson\\ExportedFile_20240524_142056.json";
@@ -190,20 +187,12 @@ namespace BackGroudJob_Demo2
                 //    Console.WriteLine("file1 & file2 FIT");
                 //}
 
-
             }
-            catch (HttpRequestException ex)
+            catch(Exception ex)
             {
-                _logger.LogError($"Error calling API: {ex.Message}");
+                LoggerError(ex);
             }
-            catch (JsonException ex)
-            {
-                _logger.LogError($"Error parsing JSON response: {ex.Message}");
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError($"Unexpected error: {ex.Message}");
-            }
+           
         }
 
         public async Task<T> HandleAPIResponse<T>(HttpResponseMessage response) where T : baseResponse, new()
@@ -224,7 +213,7 @@ namespace BackGroudJob_Demo2
             }
             catch (JsonException ex)
             {
-                _logger.LogError(ex,$"Error deserializing response: {ex}");
+                _logger.LogError(ex,$"Error deserializing response");
                 return null;
             }
         }
@@ -480,5 +469,55 @@ namespace BackGroudJob_Demo2
 
             return true;
         }
+
+        public void LoggerError(Exception ex)
+        {
+            switch (ex)
+            {
+                case HttpRequestException httpException:
+                    _logger.LogError(httpException, $"Error calling API: {httpException.Message}");
+                    break;
+                case JsonException jsonException:
+                    _logger.LogError(jsonException, $"Error JSON response: {jsonException.Message}");
+                    break;
+                case FileNotFoundException fileNotFoundException:
+                    _logger.LogError(fileNotFoundException, $"File not found: {fileNotFoundException.FileName}");
+                    break;
+                case InvalidOperationException invalidOperationException:
+                    _logger.LogError(invalidOperationException, $"Invalid operation: {invalidOperationException.Message}");
+                    break;
+                case ArgumentNullException argumentNullException:
+                    _logger.LogError(argumentNullException, $"Argument cannot be null: {argumentNullException.ParamName}");
+                    break;
+                case ArgumentException argumentException:
+                    _logger.LogError(argumentException, $"Argument error: {argumentException.Message}");
+                    break;
+                case FormatException formatException:
+                    _logger.LogError(formatException, $"Format error: {formatException.Message}");
+                    break;
+                case OverflowException overflowException:
+                    _logger.LogError(overflowException, $"Overflow error: {overflowException.Message}");
+                    break;
+                case IndexOutOfRangeException indexOutOfRangeException:
+                    _logger.LogError(indexOutOfRangeException, $"Index out of range: {indexOutOfRangeException.Message}");
+                    break;
+                case TimeoutException timeoutException:
+                    _logger.LogError(timeoutException, $"Timeout error: {timeoutException.Message}");
+                    break;
+                case IOException ioException:
+                    _logger.LogError(ioException, $"IO error: {ioException.Message}");
+                    break;
+                case UnauthorizedAccessException unauthorizedAccessException:
+                    _logger.LogError(unauthorizedAccessException, $"Unauthorized access error: {unauthorizedAccessException.Message}");
+                    break;
+                case DbException dbException:
+                    _logger.LogError(dbException, $"Database error: {dbException.Message}");
+                    break;
+                default:
+                    _logger.LogError(ex, $"Unexpected error: {ex.Message}");
+                    break;
+            }
+        }
+
     }
 }
