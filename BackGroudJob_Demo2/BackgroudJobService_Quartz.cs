@@ -148,35 +148,35 @@ namespace BackGroudJob_Demo2
                 //string DeleteUserURL = "https://localhost:7156/api/User/"+ 10;
                 //var result = await DeleteAPIAsync<DeleteUserResponse>(DeleteUserURL);
                 /*---------------------------------------------------------------*/
-                //string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
-                //string jsonContext = await File.ReadAllTextAsync(pathFileJson);
+                string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
+                string jsonContext = await File.ReadAllTextAsync(pathFileJson);
 
-                //var settings = new JsonSerializerSettings
-                //{
-                //    NullValueHandling = NullValueHandling.Ignore,
-                //    Formatting = Formatting.Indented
-                //};
+                var settings = new JsonSerializerSettings
+                {
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Formatting = Formatting.Indented
+                };
 
-                //try
-                //{
-                //    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
-                //    var jsonExport = JsonConvert.SerializeObject(response, settings);
-                //    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+                try
+                {
+                    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
+                    var jsonExport = JsonConvert.SerializeObject(response, settings);
+                    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
 
-                //    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
+                    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
 
-                //    if (!Directory.Exists(pathFile))
-                //    {
-                //        System.IO.Directory.CreateDirectory(pathFile);
-                //    }
+                    if (!Directory.Exists(pathFile))
+                    {
+                        System.IO.Directory.CreateDirectory(pathFile);
+                    }
 
-                //    var filePath = Path.Combine(pathFile, fileName);
-                //    File.WriteAllText(filePath, jsonExport);
-                //}
-                //catch (Exception ex)
-                //{
-                //    LoggerError(ex);
-                //}
+                    var filePath = Path.Combine(pathFile, fileName);
+                    File.WriteAllText(filePath, jsonExport);
+                }
+                catch (Exception ex)
+                {
+                    LoggerError(ex);
+                }
                 /*---------------------------------------------------------------*/
                 //string filePath1 = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
                 //string filePath2 = @"F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileJson\\ExportedFile_20240524_142056.json";
