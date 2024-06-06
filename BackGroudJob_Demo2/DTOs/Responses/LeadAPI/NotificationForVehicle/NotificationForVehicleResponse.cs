@@ -5,7 +5,7 @@ using BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle.PreviousN
 
 namespace BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle
 {
-    public class NotificationForVehicleResponse
+    public class NotificationForVehicleResponse:baseResponse
     {
         public List<Notifications> Notifications { get; set; }
 

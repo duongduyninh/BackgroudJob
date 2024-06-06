@@ -1,10 +1,13 @@
 ﻿using BackGroudJob_Demo2.Data;
 using BackGroudJob_Demo2.Data.Models;
 using BackGroudJob_Demo2.DTOs;
+using BackGroudJob_Demo2.DTOs.Requests.LeadAPI;
 using BackGroudJob_Demo2.DTOs.Responses.APIUser;
+using BackGroudJob_Demo2.DTOs.Responses.LeadAPI;
 using BackGroudJob_Demo2.DTOs.Responses.LeadAPI.NotificationForVehicle;
 using CsvHelper;
 using MailKit.Security;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -16,10 +19,12 @@ using Newtonsoft.Json.Serialization;
 using Org.BouncyCastle.Asn1.Ocsp;
 using Quartz;
 using Renci.SshNet;
+using Serilog;
 using System.Data.Common;
 using System.Globalization;
 using System.IO;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Mail;
 using System.Reflection;
 using System.Text;
@@ -148,35 +153,35 @@ namespace BackGroudJob_Demo2
                 //string DeleteUserURL = "https://localhost:7156/api/User/"+ 10;
                 //var result = await DeleteAPIAsync<DeleteUserResponse>(DeleteUserURL);
                 /*---------------------------------------------------------------*/
-                string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
-                string jsonContext = await File.ReadAllTextAsync(pathFileJson);
+                //string pathFileJson = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
+                //string jsonContext = await File.ReadAllTextAsync(pathFileJson);
 
-                var settings = new JsonSerializerSettings
-                {
-                    NullValueHandling = NullValueHandling.Ignore,
-                    Formatting = Formatting.Indented
-                };
+                //var settings = new JsonSerializerSettings
+                //{
+                //    NullValueHandling = NullValueHandling.Ignore,
+                //    Formatting = Formatting.Indented
+                //};
 
-                try
-                {
-                    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
-                    var jsonExport = JsonConvert.SerializeObject(response, settings);
-                    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
+                //try
+                //{
+                //    NotificationForVehicleResponse response = JsonConvert.DeserializeObject<NotificationForVehicleResponse>(jsonContext, settings);
+                //    var jsonExport = JsonConvert.SerializeObject(response, settings);
+                //    var fileName = $"ExportedFile_{DateTime.Now:yyyyMMdd_HHmmss}.json";
 
-                    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
+                //    var pathFile = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory) + "\\Files\\FileJson\\";
 
-                    if (!Directory.Exists(pathFile))
-                    {
-                        System.IO.Directory.CreateDirectory(pathFile);
-                    }
+                //    if (!Directory.Exists(pathFile))
+                //    {
+                //        System.IO.Directory.CreateDirectory(pathFile);
+                //    }
 
-                    var filePath = Path.Combine(pathFile, fileName);
-                    File.WriteAllText(filePath, jsonExport);
-                }
-                catch (Exception ex)
-                {
-                    LoggerError(ex);
-                }
+                //    var filePath = Path.Combine(pathFile, fileName);
+                //    File.WriteAllText(filePath, jsonExport);
+                //}
+                //catch (Exception ex)
+                //{
+                //    LoggerError(ex);
+                //}
                 /*---------------------------------------------------------------*/
                 //string filePath1 = @"E:\\SiliconStack\\Lead API Implementation\\lead-notification-response-sample.json";
                 //string filePath2 = @"F:\\Visual Studio\\BackGroudJob_Demo2\\BackGroudJob_Demo2\\bin\\Debug\\net8.0\\Files\\FileJson\\ExportedFile_20240524_142056.json";
@@ -186,13 +191,56 @@ namespace BackGroudJob_Demo2
                 //{
                 //    Console.WriteLine("file1 & file2 FIT");
                 //}
-
+                /*---------------------------------------------------------------*/
+                // await NotificationForVehicle();
+                //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                /*---------------------------------------------------------------*/
+                await TestReflection();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 LoggerError(ex);
             }
            
+        }
+
+        public async Task<NotificationForVehicleResponse> NotificationForVehicle()
+        {
+            string accessToken = null;
+            var request = new FormUrlEncodedContent(new[]
+            {
+                new KeyValuePair<string, string>("grant_type", "client_credentials"),
+                new KeyValuePair<string, string>("client_id", "a153bd20-e947-4380-aee3-9cfc3da0bc74"),
+                new KeyValuePair<string, string>("client_secret", "rdcQCsLROzbgZ6HaAJpnAgDlU1KQig3A0hOcJzQs"),
+                new KeyValuePair<string, string>("scope", "machine2machine client_a153bd20-e947-4380-aee3-9cfc3da0bc74")
+            });
+
+            GetNotificationForVehicleRequest requet2 = new GetNotificationForVehicleRequest
+            {
+                tspId = 79,
+                vin = "12345678901234568"
+            };
+
+            string url = "https://auth-i.bmwgroup.net/auth/oauth2/realms/root/realms/machine2machine/access_token";
+
+            try
+            {
+                var responseAccessToken = await PostAPIAsync<GetAccessTokenE2EResponse>(url, request);
+
+                accessToken = responseAccessToken.Access_Token;
+
+                string url2 = "https://tsp-e2e-emea.bmw.com/ts-pffs/lead/v1/notifications-for-vehicle";
+
+                NotificationForVehicleResponse response = await PostAPIAsync<NotificationForVehicleResponse>(url2, requet2, accessToken);
+
+                Log.Information("Response NotificationForVehicle");
+                return response;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
+            }
         }
 
         public async Task<T> HandleAPIResponse<T>(HttpResponseMessage response) where T : baseResponse, new()
@@ -224,10 +272,24 @@ namespace BackGroudJob_Demo2
             return await HandleAPIResponse<T>(response);
         }
 
-        public async Task<T> PostAPIAsync<T , TRequest>(string url, TRequest request) where T : baseResponse , new()
+        public async Task<T> PostAPIAsync<T>(string url, Object request ,string authToken = null ) where T : baseResponse , new()
         {
-            var json = JsonConvert.SerializeObject(request);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            if (!string.IsNullOrEmpty(authToken))
+            {
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
+            }
+
+            HttpContent content;
+            if (request is HttpContent)
+            {
+                content = request as HttpContent;
+            }
+            else
+            {
+                var json = JsonConvert.SerializeObject(request);
+                content = new StringContent(json, Encoding.UTF8, "application/json");
+            }
+
             var response = await _httpClient.PostAsync(url, content);
             return await HandleAPIResponse<T>(response);
         }
@@ -519,5 +581,12 @@ namespace BackGroudJob_Demo2
             }
         }
 
+        public async Task TestReflection()
+        {
+            string className = File.ReadAllText("C:\\Users\\Admin\\Downloads\\AU Keepass E2E (2).txt").Trim();
+
+            Type classType = Type.GetType(className);
+            Console.WriteLine(classType.FullName);
+        }
     }
 }

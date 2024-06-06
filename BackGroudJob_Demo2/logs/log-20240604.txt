@@ -1,0 +1,343 @@
+2024-06-04 10:46:34.069 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:46:34.400 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:46:34.401 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:46:34.402 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:46:34.402 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:46:34.403 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:46:34.404 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:46:34.405 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:46:34.412 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:46:34.414 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:46:34.758 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:46:34.760 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:46:34.761 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:46:34.762 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:46:34.762 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:46:34.763 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:46:35.047 +07:00 [INF] Start
+2024-06-04 10:48:23.219 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:48:23.324 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:48:23.325 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:48:23.326 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:48:23.326 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:48:23.327 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:48:23.328 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:48:23.329 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:48:23.337 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:48:23.339 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:48:23.481 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:48:23.483 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:48:23.485 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:48:23.486 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:48:23.487 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:48:23.488 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:48:23.592 +07:00 [INF] Start
+2024-06-04 10:48:38.069 +07:00 [INF] Start
+2024-06-04 10:49:40.444 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:49:40.547 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:49:40.555 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:49:40.556 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:49:40.557 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:49:40.558 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:49:40.558 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:49:40.559 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:49:40.567 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:49:40.570 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:49:40.717 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:49:40.719 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:49:40.720 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:49:40.721 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:49:40.721 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:49:40.722 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:49:40.820 +07:00 [INF] Start
+2024-06-04 10:50:08.838 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:50:08.954 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:50:08.956 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:50:08.957 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:50:08.957 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:50:08.958 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:50:08.959 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:50:08.960 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:50:08.967 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:50:08.969 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:50:09.083 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:50:09.086 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:50:09.087 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:50:09.087 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:50:09.088 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:50:09.089 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:50:09.193 +07:00 [INF] Start
+2024-06-04 10:50:52.278 +07:00 [INF] Start
+2024-06-04 10:51:51.362 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:51:51.482 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:51:51.483 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:51:51.485 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:51:51.487 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:51:51.488 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:51:51.489 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:51:51.491 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:51:51.500 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:51:51.502 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:51:51.629 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:51:51.631 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:51:51.632 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:51:51.632 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:51:51.633 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:51:51.634 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:51:51.724 +07:00 [INF] Start
+2024-06-04 10:52:07.452 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:52:07.547 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:52:07.555 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:52:07.556 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:52:07.559 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:52:07.560 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:52:07.561 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:52:07.561 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:52:07.569 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:52:07.571 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:52:07.702 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:52:07.704 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:52:07.705 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:52:07.706 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:52:07.707 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:52:07.707 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:52:07.815 +07:00 [INF] Start
+2024-06-04 10:52:54.473 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:52:54.585 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:52:54.586 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:52:54.587 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:52:54.588 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:52:54.589 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:52:54.589 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:52:54.590 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:52:54.598 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:52:54.600 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:52:54.743 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:52:54.745 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:52:54.746 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:52:54.748 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:52:54.748 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:52:54.749 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:52:54.847 +07:00 [INF] Start
+2024-06-04 10:53:45.520 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:53:45.635 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:53:45.636 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:53:45.637 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:53:45.638 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:53:45.639 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:53:45.639 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:53:45.640 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:53:45.648 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:53:45.650 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:53:45.770 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:53:45.772 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:53:45.773 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:53:45.774 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:53:45.774 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:53:45.775 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:53:45.888 +07:00 [INF] Start
+2024-06-04 10:53:54.316 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 10:53:54.439 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 10:53:54.440 +07:00 [INF] Quartz Scheduler created
+2024-06-04 10:53:54.441 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 10:53:54.442 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 10:53:54.443 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 10:53:54.444 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 10:53:54.445 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 10:53:54.453 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 10:53:54.455 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 10:53:54.569 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 10:53:54.571 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 10:53:54.572 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 10:53:54.573 +07:00 [INF] Hosting environment: Development
+2024-06-04 10:53:54.573 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 10:53:54.574 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 10:53:54.734 +07:00 [INF] Start
+2024-06-04 11:00:00.793 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:00:00.901 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:00:00.902 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:00:00.903 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:00:00.903 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:00:00.904 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:00:00.905 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:00:00.906 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:00:00.915 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:00:00.917 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:00:01.037 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:00:01.039 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:00:01.040 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:00:01.041 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:00:01.041 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:00:01.042 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:00:01.133 +07:00 [INF] Start
+2024-06-04 11:12:00.543 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:12:00.666 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:12:00.668 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:12:00.669 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:12:00.670 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:12:00.670 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:12:00.671 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:12:00.672 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:12:00.680 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:12:00.683 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:12:00.804 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:12:00.806 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:12:00.807 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:12:00.808 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:12:00.809 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:12:00.809 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:12:00.906 +07:00 [INF] Start
+2024-06-04 11:13:11.427 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:13:11.528 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:13:11.529 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:13:11.530 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:13:11.531 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:13:11.532 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:13:11.532 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:13:11.533 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:13:11.541 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:13:11.543 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:13:11.672 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:13:11.674 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:13:11.675 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:13:11.676 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:13:11.676 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:13:11.677 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:13:11.782 +07:00 [INF] Start
+2024-06-04 11:13:46.765 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:13:46.891 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:13:46.893 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:13:46.894 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:13:46.895 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:13:46.896 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:13:46.897 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:13:46.898 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:13:46.907 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:13:46.910 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:13:47.043 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:13:47.045 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:13:47.045 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:13:47.046 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:13:47.047 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:13:47.048 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:13:47.147 +07:00 [INF] Start
+2024-06-04 11:14:10.262 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:14:10.368 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:14:10.369 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:14:10.370 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:14:10.371 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:14:10.374 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:14:10.375 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:14:10.375 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:14:10.382 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:14:10.384 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:14:10.516 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:14:10.518 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:14:10.519 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:14:10.520 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:14:10.521 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:14:10.521 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:14:10.637 +07:00 [INF] Start
+2024-06-04 11:15:01.274 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:15:01.372 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:15:01.373 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:15:01.374 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:15:01.375 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:15:01.376 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:15:01.377 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:15:01.378 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:15:01.386 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:15:01.388 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:15:01.515 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:15:01.517 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:15:01.518 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:15:01.519 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:15:01.520 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:15:01.521 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:15:01.618 +07:00 [INF] Start
+2024-06-04 11:28:16.637 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:28:16.757 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:28:16.758 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:28:16.759 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:28:16.760 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:28:16.761 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:28:16.762 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:28:16.763 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:28:16.771 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:28:16.773 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:28:16.905 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:28:16.906 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:28:16.907 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:28:16.908 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:28:16.908 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:28:16.910 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:28:17.004 +07:00 [INF] Start
+2024-06-04 11:29:17.016 +07:00 [INF] Start
+2024-06-04 11:29:27.891 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:29:28.004 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:29:28.005 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:29:28.007 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:29:28.007 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:29:28.008 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:29:28.009 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:29:28.010 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:29:28.017 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:29:28.019 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:29:28.157 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:29:28.160 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:29:28.161 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:29:28.162 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:29:28.163 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:29:28.164 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:29:28.266 +07:00 [INF] Start
+2024-06-04 11:58:29.344 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:58:29.460 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:58:29.468 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:58:29.469 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:58:29.471 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:58:29.472 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:58:29.472 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:58:29.473 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:58:29.481 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:58:29.484 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:58:29.616 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:58:29.617 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:58:29.619 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:58:29.619 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:58:29.620 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:58:29.621 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:58:29.717 +07:00 [INF] Start
+2024-06-04 11:59:00.883 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:59:00.990 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:59:00.991 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:59:00.992 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:59:00.993 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:59:00.994 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:59:00.995 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:59:00.996 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:59:01.002 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:59:01.005 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:59:01.146 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:59:01.147 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:59:01.149 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:59:01.150 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:59:01.151 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:59:01.151 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:59:01.249 +07:00 [INF] Start
+2024-06-04 11:59:55.652 +07:00 [INF] No action descriptors found. This may indicate an incorrectly configured application or missing application parts. To learn more, visit https://aka.ms/aspnet/mvc/app-parts
+2024-06-04 11:59:55.773 +07:00 [INF] Initialized Scheduler Signaller of type: Quartz.Core.SchedulerSignalerImpl
+2024-06-04 11:59:55.775 +07:00 [INF] Quartz Scheduler created
+2024-06-04 11:59:55.776 +07:00 [INF] JobFactory set to: Quartz.Simpl.MicrosoftDependencyInjectionJobFactory
+2024-06-04 11:59:55.777 +07:00 [INF] RAMJobStore initialized.
+2024-06-04 11:59:55.778 +07:00 [INF] Quartz Scheduler 3.9.0.0 - 'QuartzScheduler' with instanceId 'NON_CLUSTERED' initialized
+2024-06-04 11:59:55.779 +07:00 [INF] Using thread pool 'Quartz.Simpl.DefaultThreadPool', size: 10
+2024-06-04 11:59:55.780 +07:00 [INF] Using job store 'Quartz.Simpl.RAMJobStore', supports persistence: False, clustered: False
+2024-06-04 11:59:55.788 +07:00 [INF] Adding 1 jobs, 1 triggers.
+2024-06-04 11:59:55.791 +07:00 [INF] Adding job: DEFAULT.BackgroudJobService_Quartz
+2024-06-04 11:59:55.913 +07:00 [INF] Now listening on: https://localhost:7164
+2024-06-04 11:59:55.915 +07:00 [INF] Now listening on: http://localhost:5165
+2024-06-04 11:59:55.916 +07:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-04 11:59:55.917 +07:00 [INF] Hosting environment: Development
+2024-06-04 11:59:55.917 +07:00 [INF] Content root path: F:\Visual Studio\BackGroudJob_Demo2\BackGroudJob_Demo2
+2024-06-04 11:59:55.918 +07:00 [INF] Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2024-06-04 11:59:56.053 +07:00 [INF] Start

@@ -2,8 +2,8 @@
 {
     public class baseResponse
     {
-        public bool Status { get; set; }  
-        public int StatusCodeAPI { get; set; }
-        public string Message { get; set; } = string.Empty;
+        public bool? Status { get; set; }  
+        public int? StatusCodeAPI { get; set; }
+        public string? Message { get; set; } = string.Empty;
     }
 }
